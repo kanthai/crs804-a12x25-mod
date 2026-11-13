@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="900" height="560" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="#222">CRS804 fan connector wiring — NF-A12x25 via the original MikroTik connectors</text>
+  <text x="450" y="58" text-anchor="middle" font-size="13" fill="#666">MikroTik card-edge connector, viewed from the WIRE side (cavities 1–8). No soldering: Noctua's crimp terminals fit the cavities.</text>
+
+  <!-- connector A (RouterOS fan2: full) -->
+  <text x="225" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Connector in bay "fan2" — full fan</text>
+  <rect x="60" y="112" width="330" height="56" rx="6" fill="#f2f2f2" stroke="#333" stroke-width="2"/>
+  <g font-size="12" text-anchor="middle" fill="#333">
+    <rect x="72" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="87" y="145">1</text>
+    <rect x="111" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="126" y="145">2</text>
+    <rect x="150" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="165" y="145">3</text>
+    <rect x="189" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="204" y="145">4</text>
+    <rect x="228" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="243" y="145">5</text>
+    <rect x="267" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="282" y="145">6</text>
+    <rect x="306" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="321" y="145">7</text>
+    <rect x="345" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="360" y="145">8</text>
+  </g>
+  <g stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M126 168 L126 250" stroke="#2e9e3e"/>
+    <path d="M204 168 L204 250" stroke="#1f6fd1"/>
+    <path d="M282 168 L282 250" stroke="#f2c200"/>
+    <path d="M360 168 L360 250" stroke="#111"/>
+  </g>
+  <g font-size="12" text-anchor="middle">
+    <text x="126" y="270" font-weight="bold" fill="#2e9e3e">green</text><text x="126" y="286">TACH</text>
+    <text x="204" y="270" font-weight="bold" fill="#1f6fd1">blue</text><text x="204" y="286">PWM</text>
+    <text x="282" y="270" font-weight="bold" fill="#b38f00">yellow</text><text x="282" y="286">+12 V</text>
+    <text x="360" y="270" font-weight="bold" fill="#111">black</text><text x="360" y="286">GND</text>
+  </g>
+
+  <!-- connector B (RouterOS fan1: tach only) -->
+  <text x="675" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Connector in bay "fan1" — tach + GND only</text>
+  <rect x="510" y="112" width="330" height="56" rx="6" fill="#f2f2f2" stroke="#333" stroke-width="2"/>
+  <g font-size="12" text-anchor="middle" fill="#333">
+    <rect x="522" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="537" y="145">1</text>
+    <rect x="561" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="576" y="145">2</text>
+    <rect x="600" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="615" y="145">3</text>
+    <rect x="639" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="654" y="145">4</text>
+    <rect x="678" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="693" y="145">5</text>
+    <rect x="717" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="732" y="145">6</text>
+    <rect x="756" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="771" y="145">7</text>
+    <rect x="795" y="124" width="30" height="32" fill="#e0e0e0" stroke="#555"/><text x="810" y="145">8</text>
+  </g>
+  <g stroke-width="7" stroke-linecap="round" fill="none">
+    <path d="M576 168 L576 250" stroke="#2e9e3e"/>
+    <path d="M810 168 L810 250" stroke="#111"/>
+  </g>
+  <g font-size="12" text-anchor="middle">
+    <text x="576" y="270" font-weight="bold" fill="#2e9e3e">green</text><text x="576" y="286">TACH (shared)</text>
+    <text x="654" y="270" fill="#999">4: empty</text>
+    <text x="732" y="270" fill="#999">6: empty</text>
+    <text x="810" y="270" font-weight="bold" fill="#111">black</text><text x="810" y="286">GND</text>
+  </g>
+
+  <!-- join -->
+  <rect x="300" y="320" width="300" height="46" rx="6" fill="#fff8e1" stroke="#b38f00" stroke-width="1.5"/>
+  <text x="450" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#5a4600">Join OUTSIDE the duct</text>
+  <text x="450" y="357" text-anchor="middle" font-size="12" fill="#5a4600">extension 2: only tach + GND, spliced onto extension 1's tach + GND</text>
+
+  <!-- colour tables -->
+  <text x="60" y="410" font-size="14" font-weight="bold" fill="#222">Colour codes (they differ!)</text>
+  <g font-size="13" fill="#333">
+    <text x="60" y="434">Noctua:  black GND · yellow +12 V · green TACH · blue PWM</text>
+    <text x="60" y="456">Stock Delta FFB0412UHN-C:  black GND · red +12 V · yellow TACH · blue PWM   (verified with a PWM controller)</text>
+    <text x="60" y="478">MikroTik connector cavities (wire side):  2 = tach · 4 = PWM · 6 = +12 V · 8 = GND</text>
+  </g>
+  <text x="60" y="512" font-size="12" fill="#a33">Never put +12 V or PWM into the fan1 connector (that would tie two controller outputs together).</text>
+  <text x="60" y="530" font-size="12" fill="#a33">One fan's tach feeding two inputs is fine (one source, two listeners) → RouterOS fan-state = ok, fan1 = fan2 rpm.</text>
+</svg>
