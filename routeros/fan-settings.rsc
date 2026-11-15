@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 # MikroTik CRS804-4DDQ fan controller settings for a single Noctua NF-A12x25 PWM (via the A12x25 adapter)
 # RouterOS 7.25+ (7.25 shortened the fan control interval to 10 s; on 7.24 the 30 s loop overshoots badly).
 #

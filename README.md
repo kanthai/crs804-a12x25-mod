@@ -1,7 +1,5 @@
 # Quiet MikroTik CRS804-4DDQ: one Noctua NF-A12x25 instead of the 2 × 40 mm Delta fans
 
-> **DRAFT — not published yet.**
-
 ![The adapter installed on a CRS804-4DDQ](docs/photos/03-installed-top.jpg)
 
 The CRS804-4DDQ (4 × 400G, popular for clustering NVIDIA DGX Spark / GB10 boxes) cools its switch chip with two
@@ -110,4 +108,7 @@ See `routeros/fan-settings.rsc`:
   use at your own risk.
 
 ## License
-TBD (suggestion: CC BY-SA 4.0 for the models, MIT for the scripts).
+- Models, drawings, photos, docs: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- Scripts and RouterOS config (`cad/*.py`, `routeros/`): MIT
+
+See [LICENSE](LICENSE).

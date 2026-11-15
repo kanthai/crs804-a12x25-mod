@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """Independent mesh audit for printed parts: watertight, bodies, volume, overhang area for a given print 'up' axis.
 usage: check.py file.stl:up  (up = +z, -z, +y, -y ... the model axis that points UP on the print bed)"""
 import json, sys

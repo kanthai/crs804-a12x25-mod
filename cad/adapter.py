@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 """CRS804-4DDQ in-bay fan adapter + tilted Noctua NF-A12x25 plenum (three printed parts: A plugs, B plenum, C grommet).
 Axes: X across the bays, Y up (desk at Y = -BAY_CY), Z depth (+Z out of the rear panel; bays are Z<0).
 Part A = two carrier-shaped plugs + mating flange.  Part B = plenum + fan plate + mating flange.
