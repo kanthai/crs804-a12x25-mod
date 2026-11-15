@@ -11,7 +11,7 @@ monitors it (fan-state = ok). No soldering on the switch, fully reversible.
 peak 57 °C on a 34.9 °C day, near-silent instead of the stock 18,500 rpm Deltas.
 
 **Print profile:** PETG (ASA for long term), 0.20 mm, 3–4 walls, no supports.
-- Part A (plugs + flange): flange on the bed
+- Part A (plugs + flange, with snap detent): flange on the bed
 - Part B (plenum + fan plate): small flange on the bed
 - Part C (grommet): lip down
 Tested on a Bambu Lab X1C; plugs are modelled at the exact carrier size.

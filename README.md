@@ -30,7 +30,7 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
 
 | Item | Qty | Notes |
 |---|---|---|
-| Printed Part A — in-bay plugs + flange | 1 | `cad/v4.9_partA_detent.*` (clicks into the bays' latch notch) or `_smooth` (friction fit) |
+| Printed Part A — in-bay plugs + flange | 1 | `cad/v4.9_partA_detent.*` — clicks into the bays' latch notch like the stock carriers, pulls out with a firm tug |
 | Printed Part B — plenum + 45° fan plate | 1 | `cad/v4.9_partB_plenum.*` |
 | Printed Part C — cable grommet | 1 | `cad/v4.9_partC_grommet.*` |
 | Noctua NF-A12x25 PWM | 1 | its spare 4-pin extension cable is used for the wiring |
