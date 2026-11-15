@@ -21,4 +21,4 @@ connectors (from the stock modules), a second 4-pin extension for the tach branc
 
 **Wiring + RouterOS settings + design notes:** see the README / linked repo.
 
-**Photos:** `docs/photos/` (cover: 03-installed-top.jpg, then 01, 02, 04, 05)
+**Photos:** `docs/photos/` (cover: 03-installed-top.jpg, then 01, 02, 04, 05, 07, 08, 06)
