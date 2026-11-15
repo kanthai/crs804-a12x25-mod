@@ -30,9 +30,9 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
 
 | Item | Qty | Notes |
 |---|---|---|
-| Printed Part A — in-bay plugs + flange | 1 | `cad/v4.7_partA_detent.*` (clicks into the bays' latch notch) or `_smooth` (friction fit) |
-| Printed Part B — plenum + 45° fan plate | 1 | `cad/v4.7_partB_plenum.*` |
-| Printed Part C — cable grommet | 1 | `cad/v4.7_partC_grommet.*` |
+| Printed Part A — in-bay plugs + flange | 1 | `cad/v4.8_partA_detent.*` (clicks into the bays' latch notch) or `_smooth` (friction fit) |
+| Printed Part B — plenum + 45° fan plate | 1 | `cad/v4.8_partB_plenum.*` |
+| Printed Part C — cable grommet | 1 | `cad/v4.8_partC_grommet.*` |
 | Noctua NF-A12x25 PWM | 1 | its spare 4-pin extension cable is used for the wiring |
 | 2nd 4-pin fan extension (or a short 2-wire lead) | 1 | for the tach-only branch |
 | Original MikroTik fan connectors | 2 | unscrewed from the two stock fan modules (keep the modules to go back) |
@@ -81,6 +81,7 @@ See `routeros/fan-settings.rsc`:
 - Never set target = full-speed temp (65): it saw-tooths.
 
 ## Design notes
+- Nothing goes below 3 mm above the desk, so the switch stands on its own feet.
 - Plugs are closed tubes at the measured carrier size; the 3.4 mm bay partition slides between them; the divider runs
   flush to the plenum face. Standoffs and tie anchors are faired along the flow.
 - Detent bump 1.5 mm, 2.5 mm from the outer end, on the left rail (as seen from behind the switch), 45° ramps both ways

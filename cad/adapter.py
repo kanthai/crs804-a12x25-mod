@@ -34,7 +34,7 @@ FAIR_L = 12.0                               # standoff tail length (flow is from
 CHAMF = 2.0                                 # chamfer on the standoff's exposed top-inboard edge
 import os
 LATCH_ENABLE = os.environ.get("LATCH", "1") == "1"   # LATCH=0: smooth rails, friction fit (no slots, no bump)
-VERSION = os.environ.get("VERSION", "v4.7")   # running version: .x = minor revision, new major = redesign 
+VERSION = os.environ.get("VERSION", "v4.8")   # running version: .x = minor revision, new major = redesign 
 SUFFIX = "" if LATCH_ENABLE else "_smooth"
 # ---- design ----
 FDM = float(os.environ.get("FDM", 0.0))    # per-side width allowance: 0 = exact carrier (X1C prints true; 0.10 was loose)
@@ -60,6 +60,7 @@ IN_W_B = B_PITCH + float(os.environ.get("B_W", W))   # B_W=43.03 = plug width th
 if B_PITCH != PITCH:
     SUFFIX += "_fitB%.2f" % B_PITCH            # (kept for the report; file names use VERSION)
 DESK = -BAY_CY
+DESK_CLEAR = float(os.environ.get("DESK_CLEAR", 3.0))   # v4.8: nothing below desk + 3 mm (switch must stand on its own feet)
 
 CABLE_CLIPS = os.environ.get("CLIPS", "1") == "1"   # cable-tie anchors (v4.2)
 ANCHOR_Z = (-9.0, -22.0)                    # anchor centres along each plug (connector pad starts at -CAR_D + CONN_L + 4)
@@ -159,7 +160,7 @@ def plug(x):
 # ---- Part A: plugs + flange ----
 EAR = 9.0                                   # flange ear beyond the plugs on each side (screw holes here)
 FL_TOP = H / 2 + 5.0                        # flange top edge
-FL_BOT = DESK + 0.5                         # flange bottom edge: 0.5 mm above the desk
+FL_BOT = DESK + DESK_CLEAR                  # flange bottom edge (v4.8: 3 mm above the desk; was 0.5 and lifted the switch)
 holes = [(sx * (IN_W_B / 2 + EAR / 2), hy) for sx in (-1, 1) for hy in (-10.0, 10.0)]
 
 def flange(z, opening_w, opening_h, hole_r, windows=None):
@@ -176,14 +177,14 @@ CH_A = (H - 2 * TB_WALL) if CLOSED_TB else (H - 2.4)
 # one window per plug channel: the divider (inner rails + partition slot) continues flush to the mating face with B
 flA = flange(0.0, 0, 0, 1.45, windows=[(x, W - 2 * RAIL, CH_A) for x in xs])  # opening 2.4 shorter than the plugs: overlap, no shared edges          # 2.9 mm pilot: M3 self-tap / heat insert
 partA = plug(xs[0]) + plug(xs[1]) + flA
-partA -= Pos(0, DESK - 100, 0) * Box(2000, 200, 2000)                        # never below the desk
+partA -= Pos(0, DESK + DESK_CLEAR - 100, 0) * Box(2000, 200, 2000)           # never below desk + DESK_CLEAR
 
 # ---- Part B: plenum + fan plate ----
 z0 = FLANGE_T
 flB = flange(z0, IN_W_B, H, 1.7)                       # 3.4 mm clearance for M3
 t = math.radians(TILT)
 cz = z0 + FLANGE_T + PLEN_LEN + FAN / 2 * math.sin(t)
-cy = DESK + FAN / 2 * math.cos(t) + 1.0
+cy = DESK + (FAN + 2.0) / 2 * math.cos(t) + DESK_CLEAR   # v4.8: the 122 mm plate's lowest edge sits DESK_CLEAR above the desk
 fp = Plane(origin=(0, cy, cz), x_dir=(1, 0, 0), z_dir=(0, math.sin(t), math.cos(t)))
 base = Plane.XY.offset(z0 + FLANGE_T)
 outer = loft([base * RectangleRounded(IN_W_B + 2 * WALL, H + 2 * WALL, 3.0 + WALL), fp * Circle(FAN_OPEN / 2 + WALL)], ruled=False)
@@ -214,7 +215,7 @@ if PORT:
     partB -= port_plane * Pos(0, 0, 40) * extrude(keyhole(), amount=45)       # from x=40 outward: right wall only
     # tie anchor on the plenum floor just inside the inlet, right of centre (toward the port)
     partB += tie_anchor((IN_W_B / 4, -H / 2, z0 + FLANGE_T + 4.0))
-partB -= Pos(0, DESK - 100, 0) * Box(2000, 200, 2000)
+partB -= Pos(0, DESK + DESK_CLEAR - 100, 0) * Box(2000, 200, 2000)
 
 # ---- Part C (v4.2): snap-in grommet for the pass-through (cable then sits in the 5 mm seat) ----
 GROM_CLEAR = 0.15
