@@ -34,7 +34,7 @@ FAIR_L = 12.0                               # standoff tail length (flow is from
 CHAMF = 2.0                                 # chamfer on the standoff's exposed top-inboard edge
 import os
 LATCH_ENABLE = os.environ.get("LATCH", "1") == "1"   # LATCH=0: smooth rails, friction fit (no slots, no bump)
-VERSION = os.environ.get("VERSION", "v4.8")   # running version: .x = minor revision, new major = redesign 
+VERSION = os.environ.get("VERSION", "v4.9")   # running version: .x = minor revision, new major = redesign 
 SUFFIX = "" if LATCH_ENABLE else "_smooth"
 # ---- design ----
 FDM = float(os.environ.get("FDM", 0.0))    # per-side width allowance: 0 = exact carrier (X1C prints true; 0.10 was loose)
@@ -62,7 +62,7 @@ if B_PITCH != PITCH:
 DESK = -BAY_CY
 DESK_CLEAR = float(os.environ.get("DESK_CLEAR", 3.0))   # v4.8: nothing below desk + 3 mm (switch must stand on its own feet)
 
-CABLE_CLIPS = os.environ.get("CLIPS", "1") == "1"   # cable-tie anchors (v4.2)
+CABLE_CLIPS = os.environ.get("CLIPS", "0") == "1"   # Part A tie anchors: OFF since v4.9 (crowded the connector, little use). Part B inlet anchor stays.
 ANCHOR_Z = (-9.0, -22.0)                    # anchor centres along each plug (connector pad starts at -CAR_D + CONN_L + 4)
 TIE_W, TIE_T = 3.2, 1.6                     # slot for a 2.5 mm mini cable tie
 

@@ -30,16 +30,16 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
 
 | Item | Qty | Notes |
 |---|---|---|
-| Printed Part A — in-bay plugs + flange | 1 | `cad/v4.8_partA_detent.*` (clicks into the bays' latch notch) or `_smooth` (friction fit) |
-| Printed Part B — plenum + 45° fan plate | 1 | `cad/v4.8_partB_plenum.*` |
-| Printed Part C — cable grommet | 1 | `cad/v4.8_partC_grommet.*` |
+| Printed Part A — in-bay plugs + flange | 1 | `cad/v4.9_partA_detent.*` (clicks into the bays' latch notch) or `_smooth` (friction fit) |
+| Printed Part B — plenum + 45° fan plate | 1 | `cad/v4.9_partB_plenum.*` |
+| Printed Part C — cable grommet | 1 | `cad/v4.9_partC_grommet.*` |
 | Noctua NF-A12x25 PWM | 1 | its spare 4-pin extension cable is used for the wiring |
 | 2nd 4-pin fan extension (or a short 2-wire lead) | 1 | for the tach-only branch |
 | Original MikroTik fan connectors | 2 | unscrewed from the two stock fan modules (keep the modules to go back) |
 | M3 × 4 × 5 heat-set inserts (OD 5) | 4 | connector standoffs (bore 4.6 × 5 deep) |
 | M3 × 6 screws | 4 | connector ears → inserts (ear thickness + ~3.5 mm) |
 | M3 screws | 4 | Part B → Part A flange (A has 2.9 mm pilots for self-tapping or inserts) |
-| Mini cable ties 2.5 mm, solder-seal sleeves | few | cable anchors in the plugs; the tach join |
+| Mini cable tie 2.5 mm, solder-seal sleeves | 1 + 2 | cable anchor at the plenum inlet (keeps the cable away from the fan); the tach join |
 
 ## Printing (tested on a Bambu Lab X1C)
 - PETG works; ASA if it will sit in warm exhaust for years. 3–4 walls.
@@ -52,7 +52,7 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
 2. Unscrew the MikroTik card-edge connector from each stock fan module (2 screws through its ears).
 3. Press the 4 inserts into Part A's standoffs (they sit 37 mm in from the outer end — where the Delta's face was —
    so the connector ends up exactly where the carrier held it). Screw a connector onto each plug's standoffs.
-4. Wire the connectors (see below), route the cables along the plug floors (tie anchors) and out through Part B's
+4. Wire the connectors (see below), route the cables along the plug floors and out through Part B's
    keyhole port (right side as you look at the fan), seal with Part C.
 5. Slide Part A into the bays (the detent clicks), bolt Part B on, mount the NF-A12x25 pulling air **out** of the switch.
 
@@ -83,7 +83,7 @@ See `routeros/fan-settings.rsc`:
 ## Design notes
 - Nothing goes below 3 mm above the desk, so the switch stands on its own feet.
 - Plugs are closed tubes at the measured carrier size; the 3.4 mm bay partition slides between them; the divider runs
-  flush to the plenum face. Standoffs and tie anchors are faired along the flow.
+  flush to the plenum face. Standoffs are faired along the flow; the only tie anchor is at the plenum inlet, holding the cable along the wall away from the fan blades.
 - Detent bump 1.5 mm, 2.5 mm from the outer end, on the left rail (as seen from behind the switch), 45° ramps both ways
   so it clicks in and pulls out.
 - Everything is parametric: `cad/adapter.py` (build123d 0.13). `cad/check.py` audits meshes (watertight, overhangs).
