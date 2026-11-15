@@ -68,9 +68,12 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
 Noctua's crimp terminals fit the MikroTik connector's cavities. Take the terminals out of the Noctua extension's
 female plug and push them into the connector:
 
-| Stock Delta terminals out of the connector (yellow tach · blue PWM · red +12 V · black GND) | Noctua extension terminals, pulled from its plug | Noctua terminals seated (cavities 2 · 4 · 6 · 8, left → right) |
+| Stock Delta terminals out of the connector (yellow tach · blue PWM · red +12 V · black GND) | Noctua extension terminals, pulled from its plug | Noctua terminals seated, seen from the fan side (cavities 2 · 4 · 6 · 8, left → right) |
 |---|---|---|
 | ![stock](docs/photos/07-stock-delta-terminals.jpg) | ![noctua](docs/photos/08-noctua-terminals.jpg) | ![seated](docs/photos/06-noctua-terminals-in-connector.jpg) |
+
+Cavity numbers are counted **as seen from the fan side** (where the wires go in), 1 → 8 left to right; from the
+switch/PCB side the order is mirrored (see the bottom strip of the diagram).
 
 - **"fan2" connector (full):** black (GND) → cavity 8, yellow (+12 V) → 6, blue (PWM) → 4, green (tach) → 2.
 - **"fan1" connector (tach only):** green (tach) → 2, black (GND) → 8. **Leave 4 and 6 empty.**

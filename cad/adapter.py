@@ -20,7 +20,7 @@ CONN_WALL = 0.8                             # carrier floor the connector sits o
 CONN_W, CONN_L = 20.0, 12.0                 # PLACEHOLDER connector footprint on the floor: width x length along depth
 CONN_ENABLE = True
 # v4.3 connector mount : housing 39.78 long ear-to-ear, 7.44 thick, 8 cavities
-# (wire side: 2 yellow PWM, 4 blue tach, 6 red +12 V, 8 black GND); ears on the fan's lower screw pair.
+# (seen from the FAN side, not the switch/PCB side: 2 yellow tach, 4 blue PWM, 6 red +12 V, 8 black GND); ears on the fan's lower screw pair.
 CONN_HOLE_DX = 16.0                         # +/- from plug centre (40 mm fan hole pattern, 32 mm pitch)
 FAN_FROM_GRILLE, FAN_T = 9.0, 28.0         # on the carrier the Delta (40x40x28) sits 9 mm in from the grille (outer) end
 # The connector ears screw onto the fan's inner face, i.e. 9 + 28 = 37 mm in from the outer end = 7.19 mm short of

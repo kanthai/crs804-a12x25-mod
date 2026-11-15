@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="Helvetica, Arial, sans-serif">
-  <rect width="900" height="560" fill="#ffffff"/>
-  <text x="450" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="#222">CRS804 fan connector wiring — NF-A12x25 via the original MikroTik connectors</text>
-  <text x="450" y="58" text-anchor="middle" font-size="13" fill="#666">MikroTik card-edge connector, viewed from the WIRE side (cavities 1–8). No soldering: Noctua's crimp terminals fit the cavities.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="660" viewBox="0 0 900 660" font-family="Helvetica, Arial, sans-serif">
+  <rect width="900" height="660" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-size="19" font-weight="bold" fill="#222">CRS804 fan connector wiring — NF-A12x25 via the original MikroTik connectors</text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#666">MikroTik card-edge connector viewed from the FAN side (where the wires go in), NOT the switch/PCB side.</text>
+  <text x="450" y="74" text-anchor="middle" font-size="13" fill="#666">No soldering: Noctua's crimp terminals fit the cavities.</text>
 
   <!-- connector A (RouterOS fan2: full) -->
   <text x="225" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Connector in bay "fan2" — full fan</text>
@@ -54,7 +55,7 @@
   </g>
 
   <!-- join -->
-  <rect x="300" y="320" width="300" height="46" rx="6" fill="#fff8e1" stroke="#b38f00" stroke-width="1.5"/>
+  <rect x="220" y="320" width="460" height="46" rx="6" fill="#fff8e1" stroke="#b38f00" stroke-width="1.5"/>
   <text x="450" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#5a4600">Join OUTSIDE the duct</text>
   <text x="450" y="357" text-anchor="middle" font-size="12" fill="#5a4600">extension 2: only tach + GND, spliced onto extension 1's tach + GND</text>
 
@@ -63,8 +64,24 @@
   <g font-size="13" fill="#333">
     <text x="60" y="434">Noctua:  black GND · yellow +12 V · green TACH · blue PWM</text>
     <text x="60" y="456">Stock Delta FFB0412UHN-C:  black GND · red +12 V · yellow TACH · blue PWM   (verified with a PWM controller)</text>
-    <text x="60" y="478">MikroTik connector cavities (wire side):  2 = tach · 4 = PWM · 6 = +12 V · 8 = GND</text>
+    <text x="60" y="478">MikroTik connector cavities (seen from the fan side):  2 = tach · 4 = PWM · 6 = +12 V · 8 = GND</text>
   </g>
   <text x="60" y="512" font-size="12" fill="#a33">Never put +12 V or PWM into the fan1 connector (that would tie two controller outputs together).</text>
   <text x="60" y="530" font-size="12" fill="#a33">One fan's tach feeding two inputs is fine (one source, two listeners) → RouterOS fan-state = ok, fan1 = fan2 rpm.</text>
+  <!-- same connector seen from the switch/PCB side: mirrored -->
+  <text x="450" y="566" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">Same connector seen from the SWITCH / PCB side (mating face): order is mirrored</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="225" y="580" width="34" height="30" fill="#111" stroke="#555"/><text x="242.0" y="600" fill="#fff">8</text>
+    <text x="242.0" y="628" fill="#333">GND</text>
+    <rect x="267" y="580" width="34" height="30" fill="#e0e0e0" stroke="#555"/><text x="284.0" y="600" fill="#333">7</text>
+    <rect x="309" y="580" width="34" height="30" fill="#f2c200" stroke="#555"/><text x="326.0" y="600" fill="#333">6</text>
+    <text x="326.0" y="628" fill="#333">+12 V</text>
+    <rect x="351" y="580" width="34" height="30" fill="#e0e0e0" stroke="#555"/><text x="368.0" y="600" fill="#333">5</text>
+    <rect x="393" y="580" width="34" height="30" fill="#1f6fd1" stroke="#555"/><text x="410.0" y="600" fill="#fff">4</text>
+    <text x="410.0" y="628" fill="#333">PWM</text>
+    <rect x="435" y="580" width="34" height="30" fill="#e0e0e0" stroke="#555"/><text x="452.0" y="600" fill="#333">3</text>
+    <rect x="477" y="580" width="34" height="30" fill="#2e9e3e" stroke="#555"/><text x="494.0" y="600" fill="#fff">2</text>
+    <text x="494.0" y="628" fill="#333">TACH</text>
+    <rect x="519" y="580" width="34" height="30" fill="#e0e0e0" stroke="#555"/><text x="536.0" y="600" fill="#333">1</text>
+  </g>
 </svg>
