@@ -1,6 +1,8 @@
 # Quiet MikroTik CRS804-4DDQ: one Noctua NF-A12x25 instead of the 2 × 40 mm Delta fans
 
-> **DRAFT — not published yet.** Photos to be added (see `docs/photos/` TODO list at the end).
+> **DRAFT — not published yet.**
+
+![The adapter installed on a CRS804-4DDQ](docs/photos/03-installed-top.jpg)
 
 The CRS804-4DDQ (4 × 400G, popular for clustering NVIDIA DGX Spark / GB10 boxes) cools its switch chip with two
 40 × 40 × 28 mm Delta FFB0412UHN fans (18,500 rpm, 58.5 dB(A) at full speed). They are loud, and RouterOS can only
@@ -25,6 +27,8 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
   ~16,000 rpm ("take-off" noise).
 - 200G links unaffected (0 FEC corrections at 65 °C during earlier tests).
 - Measured with the switch's own sensors (SNMP / `/system/health`), living-room thermostat as ambient.
+
+![Part A + Part B + NF-A12x25, side view](docs/photos/01-adapter-side.jpg)
 
 ## What you need
 
@@ -56,6 +60,10 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
    keyhole port (right side as you look at the fan), seal with Part C.
 5. Slide Part A into the bays (the detent clicks), bolt Part B on, mount the NF-A12x25 pulling air **out** of the switch.
 
+| Plugs from the switch side: original connectors on the standoffs | Installed |
+|---|---|
+| ![plugs](docs/photos/02-plugs-and-connectors.jpg) | ![installed](docs/photos/04-installed-fan.jpg) |
+
 ## Wiring — no soldering on the switch side
 ![wiring](docs/wiring.svg)
 
@@ -70,6 +78,8 @@ female plug and push them into the connector:
 - Colours differ! Noctua: black GND · yellow +12 V · green tach · blue PWM.
   Stock Delta: black GND · red +12 V · **yellow tach · blue PWM** (the reverse of what many assume — verified).
 - Common mistake: Noctua **blue** in cavity 2 → fan1 reads 0 rpm (blue is PWM).
+
+![Cable out of the side port, tach join outside the duct](docs/photos/05-cable-and-tach-join.jpg)
 
 ## RouterOS settings
 See `routeros/fan-settings.rsc`:
@@ -98,6 +108,6 @@ See `routeros/fan-settings.rsc`:
 ## License
 TBD (suggestion: CC BY-SA 4.0 for the models, MIT for the scripts).
 
-## Photos TODO
-1. Whole setup on the desk (switch + adapter + tilted fan) 2. Part A alone + connector on the standoffs
-3. Noctua terminals in the MikroTik connector + the outside tach join 4. Cable port with grommet 5. Stock module vs plug
+## Photos still wanted (optional)
+- Close-up of the Noctua terminals seated in the MikroTik connector
+- Stock fan module next to a printed plug
