@@ -2,6 +2,8 @@
 
 ![The adapter installed on a CRS804-4DDQ](docs/photos/03-installed-top.jpg)
 
+**Print files on MakerWorld:** https://makerworld.com/en/models/3619105-mikrotik-crs804-4ddq-fan-mod
+
 The CRS804-4DDQ (4 × 400G, popular for clustering NVIDIA DGX Spark / GB10 boxes) cools its switch chip with two
 40 × 40 × 28 mm Delta FFB0412UHN fans (18,500 rpm, 58.5 dB(A) at full speed). They are loud, and RouterOS can only
 bend the fan curve a little (`fan-full-speed-temp` is capped at 65 °C).
