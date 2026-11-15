@@ -45,7 +45,7 @@ The fan plugs into the **original MikroTik connectors**, so **RouterOS still con
 - PETG works; ASA if it will sit in warm exhaust for years. 3–4 walls.
 - **A:** flange on the bed, plugs up. **B:** the small rectangular flange on the bed. **C:** lip down. No supports.
 - The plugs are modelled at the **exact** carrier size (43.23 × 40.65 × 44.19 mm). On an X1C that fitted perfectly; an
-  earlier version with −0.1 mm/side was loose. Other printers may need `FDM=0.03 FDM_H=0.03` (see `cad/adapter.py`).
+  earlier version with −0.1 mm/side was loose. Other printers may need `FDM=0.03 FDM_H=0.03` (see `cad/adapter.py`). A friction-fit Part A without the detent: `LATCH=0`.
 
 ## Assembly
 1. Power the switch off (or work fast: with no fan the chip passed 72 °C within ~3 minutes in testing).
